@@ -1,0 +1,267 @@
+:root {
+  --bg: #040507;
+  --bg-soft: #0e1224;
+  --text: #f5f7ff;
+  --muted: #b9c2e7;
+  --primary: #6c7cff;
+  --primary-strong: #7f36ff;
+  --card: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top right, #1b1445, var(--bg) 45%);
+  color: var(--text);
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: rgba(4, 5, 7, 0.8);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 72px;
+  gap: 1rem;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.brand span {
+  color: #a88cff;
+}
+
+.nav {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.nav a,
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.hero {
+  padding: 5rem 0 3.5rem;
+}
+
+.hero-grid,
+.next-step-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+.mark {
+  width: 72px;
+  height: 72px;
+}
+
+.logo-title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+}
+
+.logo-tag {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 4.3vw, 3.2rem);
+  margin-bottom: 1rem;
+}
+
+.subhead {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid transparent;
+  background: linear-gradient(120deg, var(--primary), var(--primary-strong));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.btn-sm {
+  padding: 0.55rem 0.9rem;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--border);
+}
+
+.glass-card,
+.card,
+blockquote,
+.contact-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+.glass-card,
+blockquote,
+.contact-form,
+.card {
+  padding: 1rem 1.2rem;
+}
+
+.glass-card ul,
+.checklist {
+  color: var(--muted);
+  padding-left: 1.2rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.cards,
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card p,
+.timeline p,
+.contact p,
+.next-step-grid p,
+blockquote,
+blockquote cite {
+  color: var(--muted);
+}
+
+.timeline {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding-left: 0;
+  list-style: none;
+}
+
+.timeline li {
+  border-left: 2px solid var(--primary);
+  padding-left: 0.75rem;
+}
+
+.contact {
+  max-width: 760px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+}
+
+input,
+textarea {
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  padding: 0.7rem;
+  background: rgba(5, 8, 18, 0.55);
+  color: var(--text);
+  font: inherit;
+}
+
+.form-message {
+  margin: 0.1rem 0 0;
+  color: #9de1ad;
+}
+
+.site-footer {
+  padding: 1.2rem 0 1.8rem;
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .cards,
+  .timeline,
+  .next-step-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    display: none;
+  }
+}
