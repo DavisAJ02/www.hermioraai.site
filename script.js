@@ -2,8 +2,25 @@ const yearNode = document.querySelector('#year');
 const contactForm = document.querySelector('#contactForm');
 const formMessage = document.querySelector('#formMessage');
 const submitButton = contactForm?.querySelector('button[type="submit"]');
+const revealNodes = document.querySelectorAll('.reveal');
 
 yearNode.textContent = new Date().getFullYear();
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.14,
+  }
+);
+
+revealNodes.forEach((node) => revealObserver.observe(node));
 
 contactForm.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -52,6 +69,6 @@ contactForm.addEventListener('submit', async (event) => {
     formMessage.style.color = '#ff9d9d';
   } finally {
     submitButton.disabled = false;
-    submitButton.textContent = 'Request Plan';
+    submitButton.textContent = 'Request Premium Build Plan';
   }
 });
