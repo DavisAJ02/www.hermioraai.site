@@ -161,7 +161,13 @@
         <div class="container contact">
           <h2>Tell us your growth goal</h2>
           <p>Share your objective and we'll reply with a practical build plan.</p>
-          <form id="contactForm" class="contact-form" novalidate>
+          <form
+            id="contactForm"
+            class="contact-form"
+            action="https://formspree.io/f/your-form-id"
+            method="POST"
+            novalidate
+          >
             <label>
               Name
               <input type="text" name="name" required />
@@ -174,6 +180,7 @@
               Primary Goal
               <textarea name="goals" rows="4" required></textarea>
             </label>
+            <input type="hidden" name="_subject" value="New Hermiora AI website inquiry" />
             <button type="submit" class="btn">Request Plan</button>
             <p id="formMessage" class="form-message" aria-live="polite"></p>
           </form>
